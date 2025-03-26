@@ -1,5 +1,5 @@
 import requests
-from web_scraping import response
+from web_scraping import response, arquivos
 
 #função para testar acesso ao site 
 def acesso_ao_site():
@@ -8,3 +8,4 @@ def acesso_ao_site():
     else:
         print("Erro ao acessar a url", response.status_code)#retornar resposta da requisição
 acesso_ao_site()
+
