@@ -30,6 +30,7 @@ with pdfplumber.open(pdf_caminho) as pdf:
         
         tabelas.extend(tabela) #pega todos os itens do laço for e adc na lista tabelas
 print('Tratamento feito!')
+ 
 os.makedirs('csv', exist_ok=True)
 
 caminho_csv = os.path.join('csv', 'tabela_extraída.csv')

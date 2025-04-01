@@ -34,14 +34,6 @@ CREATE TABLE demonstracoes_contabeis (
     vl_saldo_final NUMERIC(15,2) DEFAULT 0 NOT NULL
 );
 
-
 ALTER TABLE demonstracoes_contabeis 
     ALTER COLUMN vl_saldo_inicial TYPE TEXT,
     ALTER COLUMN vl_saldo_final TYPE TEXT;
-UPDATE demonstracoes_contabeis
-SET vl_saldo_inicial = REPLACE(vl_saldo_inicial, ',', '.')::REAL,
-    vl_saldo_final = REPLACE(vl_saldo_final, ',', '.')::REAL;
-
-ALTER TABLE demonstracoes_contabeis 
-ALTER COLUMN vl_saldo_inicial TYPE REAL USING vl_saldo_inicial::REAL,
-ALTER COLUMN vl_saldo_final TYPE REAL USING vl_saldo_final::REAL;
